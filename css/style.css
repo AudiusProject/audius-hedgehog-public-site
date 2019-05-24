@@ -1,5 +1,11 @@
 /* page */
+html, body {
+  min-height: 100%;
+  height: 100%;
+}
+
 body {
+  position: relative;
   background: #FFFFFF;
 }
 
@@ -19,6 +25,72 @@ body {
   }
 }
 
+.main { 
+  position: relative;
+  overflow: hidden;
+}
+
+#parallax {
+  position: absolute;
+  top: 150vh;
+  bottom: 100vh;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.blob {
+  position: relative;
+  height: 1000px;
+  width: 100%;
+}
+
+.blob > div {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.blob-2 {
+  margin-left: -300px;
+  background-image: url('../images/blob2.svg');
+}
+
+@media only screen and (max-width: 600px) {
+  .blob-2 {
+    left: 0;
+  }
+}
+
+.blob-3 {
+  margin-left: -500px;
+  background-image: url('../images/blob3.svg');
+}
+
+@media only screen and (max-width: 600px) {
+  .blob-3 {
+    left: 0;
+  }
+}
+
+.divider {
+  margin-top: 140px;
+  height: 166px;
+  width: 110%;
+  transform: rotate(-2deg);
+  background: linear-gradient(347.21deg, #F2F2F2 0%, #FAFAFA 100%);
+}
+
+.darken {
+  margin-top: -90px;
+  padding-top: 180px;
+  background: #FAFAFA;
+}
+
 /* type */
 
 h1 {
@@ -27,6 +99,15 @@ h1 {
   letter-spacing: 2px;
   line-height: 102px;
   margin: 0;
+}
+
+@media only screen and (max-width: 1280px) {
+  h1 {
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 64px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -46,6 +127,15 @@ h2 {
   text-align: center;
   margin: 0;
   margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 1280px) {
+  h2 {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 64px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -87,6 +177,16 @@ p {
   letter-spacing: 0.37px;
   line-height: 28px;
   margin: 0;
+}
+
+@media only screen and (max-width: 1280px) {
+  p {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.37px;
+    line-height: 24px;
+    margin: 0;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -153,6 +253,7 @@ a:hover {
   transition: all .1s ease-in-out;
   transform-origin: 50% 50%;
   cursor: pointer;
+  border: none !important;
 }
 
 .button img {
@@ -163,13 +264,28 @@ a:hover {
 .button:hover {
   background-color: #A782D4;
   transform: translateZ(0) scale(1.04);
-  border: none;
 }
 
 .button:active {
   background-color: #6E568C;
   transform: translateZ(0) scale(0.97);
-  border: none;
+}
+
+.social-button {
+  border: none !important;
+}
+
+.social-button img {
+  cursor: pointer;
+  transition: all .07s ease-in-out!important;
+}
+
+.social-button:hover img {
+  transform: scale(1.1);
+}
+
+.social-button:active img {
+  transform: scale(0.95);
 }
 
 /* header */
@@ -209,7 +325,7 @@ a:hover {
 }
 
 #stickyHeader {
-  padding: 10px 20px;
+  padding: 0 20px;
   position: fixed;
   top: -80px;
   left: 0;
@@ -218,7 +334,7 @@ a:hover {
   box-shadow: 0 10px 40px 0 rgba(62,57,107,0.07), 0 2px 9px 0 rgba(62,57,107,0.06);
   opacity: 0;
   transition: all .1s ease-in-out;
-  z-index: 2;
+  z-index: 200;
 }
 
 #stickyHeader .content {
@@ -250,7 +366,7 @@ a:hover {
 
 .fade {
   position: absolute;
-  height: 119px;
+  height: 90px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -265,43 +381,43 @@ a:hover {
 }
 
 .heroVideo {
+  overflow: hidden;
   position: absolute;
   height: 100vh;
   width: 100%;
 }
 
 .heroVideo .videoContainer {
-  max-width: 1800px;
   margin: 0 auto;
   position: relative;
-  height: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .heroVideo .videoContainer video {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  position: relative;
+  height: 100%;
+  left: 45%;
+  object-fit: cover;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 680px) {
   .heroVideo {
     opacity: 0.2;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .heroVideo .videoContainer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+@media only screen and (max-width: 1100px) {
+  .heroVideo .videoContainer video {
+    left: 60%;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .heroVideo .videoContainer video {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    left: 80%;
   }
 }
 
@@ -312,6 +428,8 @@ a:hover {
 
 .text {
   padding-top: 60px;
+  position: absolute;
+  z-index: 20;
 }
 
 .text h1.first {
@@ -324,11 +442,19 @@ a:hover {
 
 .text p {
   margin-top: 40px;
-  max-width: 486px;
+  max-width: 40%;
+}
+
+@media only screen and (max-width: 600px) {
+  .text p {
+    max-width: 100%;
+  }
 }
 
 .text .button {
   margin-top: 40px;
+  position: absolute;
+  z-index: 20;
 }
 
 /* pitch */
@@ -349,13 +475,6 @@ a:hover {
   .pitch .popups {
     display: block;
   }
-}
-
-.pitch p {
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 0.42px;
-  line-height: 33px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -402,7 +521,6 @@ a:hover {
 }
 
 .testimonial .content {
-  padding: 50px 0px;
   position: relative;
   margin: 0 auto;
   text-align: center;
@@ -451,12 +569,6 @@ a:hover {
 
 .testimonial .content p {
   color: #FFFFFF;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.15px;
-  line-height: 27px;
-  text-align: center;
-  text-shadow: 0 1px 9px 0 #7437B6;
 }
 
 @media only screen and (max-width: 600px) {
@@ -484,13 +596,6 @@ a:hover {
   margin-bottom: 45px;
 }
 
-.usage .good p {
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 0.42px;
-  line-height: 33px;
-}
-
 .usage .good h4 {
   margin-bottom: 16px;
   color: #4A9C88;
@@ -502,6 +607,12 @@ a:hover {
   letter-spacing: 0.67px;
   line-height: 43px;
   text-align: center;
+}
+
+@media only screen and (max-width: 1280px) {
+  .usage .good h2 {
+    font-size: 24px;
+  }
 }
 
 .usage .section {
@@ -548,6 +659,12 @@ a:hover {
   text-align: center;
 }
 
+@media only screen and (max-width: 1280px) {
+  .usage .bad h2 {
+    font-size: 24px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .usage .section:not(:last-child) p {
     font-size: 16px;
@@ -568,10 +685,6 @@ a:hover {
 }
 
 /* demo */
-
-.demo {
-  margin-top: 168px;
-}
 
 .demo p {
   text-align: center;
@@ -617,18 +730,24 @@ a:hover {
   line-height: 17px;
 }
 
+.codesandbox .button:hover {
+  background-color: #E7E4EB;
+}
+
+.codesandbox .button:active {
+  background-color: #D5D2D9;
+}
+
+.codesandbox .button img {
+  height: 20px;
+  width: 20px;
+}
+
 @media only screen and (max-width: 1385px) {
   .codesandbox .button {
     right: 10px;
     left: 10px;
     bottom: 0;
-  }
-}
-
-@media only screen and (max-width: 1385px) {
-  .codesandbox .button img {
-    height: 20px;
-    width: 20px;
   }
 }
 
@@ -684,8 +803,13 @@ a:hover {
   text-align: center;
 }
 
-.footer .container .button {
+.footer .container .button-wrapper {
+  position: relative;
   margin: 30px auto 40px;
+  height: 56px;
+}
+
+.footer .container .button {
   background: #FFFFFF;
   color: #9070B7;
   font-size: 19px;
@@ -694,6 +818,8 @@ a:hover {
   letter-spacing: 0.24px;
   line-height: 24px;
   padding: 0px 20px;
+  z-index: 200;
+  position: relative;
 }
 
 .footer .container .button img {
@@ -717,10 +843,30 @@ a:hover {
   align-items: center;
   justify-content: space-evenly;
   margin-bottom: 70px;
-} 
+  position: relative;
+}
 
 .footer .container .audius-logo {
-  width: 180px;
+  position: relative;
+}
+
+.footer .social {
+  position: relative;
+}
+
+.confetti-wrapper {
+  position: absolute;
+  bottom: -400px;
+  height: 800px;
+  width: 100%;
+}
+
+.confetti {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
 }
 
 @media only screen and (max-width: 600px) {
