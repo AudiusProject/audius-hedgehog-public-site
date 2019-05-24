@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
+  <title>Hedgehog</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -15,12 +15,18 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/fonts.css">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@0.2.1/dist/confetti.browser.min.js"></script>
+
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -29,18 +35,223 @@
 </head>
 <body>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="gradient"></div>
+  <div class="fade"></div>
+  <div class="heroVideo">
+    <div class="videoContainer">
+      <video poster="/static/hero-a5ecfb8728d031c80ce34b2fc11db507.jpg" playsinline="" loop="" muted="" autoplay="">
+        <source src="videos/heroVideo.webm" type="video/webm">
+      </video>
+    </div>
+  </div>
   <div class="container">
-    <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page</h4>
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+    <div id="header" class="header">
+      <div class="content">
+        <img src="images/hedgehogLogoHorizontal.svg"/>
+        <div class="links">
+          <a href="https://audius-project.github.io/hedgehog-docs" target="_blank">Docs</a>
+          <a class="mobile-hide" href="https://github.com/AudiusProject/audius-hedgehog" target="_blank">Github</a>
+        </div>
+      </div>
+    </div>
+    <div id="stickyHeader" class="header">
+        <div class="content">
+          <img src="images/hedgehogLogoHorizontal.svg"/>
+          <div class="links">
+            <a href="https://audius-project.github.io/hedgehog-docs" target="_blank">Docs</a>
+            <a class="mobile-hide" href="https://github.com/audius-hedgehog" target="_blank">Github</a>
+          </div>
+        </div>
+      </div>
+    <div class="landing">
+      <div class="text">
+        <h1 class="first">Build DApps</h1>
+        <h1 class="second">Like Apps</h1>
+        <p>
+          Hedgehog is an open-source, client-side Ethereum wallet that uses a username and password.
+          <br/>
+          <br/>
+          Allow users to interact with your DApp just like they would any other website, no extensions required, without centralizing control of keys.
+        </p>
+        <a href="https://github.com/AudiusProject/audius-hedgehog" target="_blank" class='button'>View on Github <img src="images/iconGithub.svg"/></a>
+      </div>
+    </div>
+    <div class="pitch">
+      <div class="row">
+        <div class="ten columns offset-by-one">
+          <h4>The Pitch</h4>
+          <h2>Not All Transactions Are Created Equal</h2>
+          <p>Currently available wallets treat every transaction as if it were moving around your life’s savings. Hedgehog was built for use-cases involving low-to-no financial value.</p>
+          <p>Note: The primary improvement to end-user experience is by hiding wallet complexity and not forcing users to constantly confirm transactions - The opposite of what you’d want when moving significant money around.</p></p>
+        </div>
+      </div>
+      <div class="row popups">
+        <div class="four columns">
+          <h3>No More Popups <i class="emoji large fox-face"></i></h3>
+          <p>Decentralized apps today require lots of technical knowledge to configure and use, limiting your possible user base and reducing the potential for growth.</p>
+        </div>
+        <div class="eight columns">
+          <video poster="/static/hero-a5ecfb8728d031c80ce34b2fc11db507.jpg" playsinline="" width="100%" loop="" muted="" height="100%" autoplay="">
+            <source src="videos/videoComparison.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="testimonial">
+    <div class="background"></div>
+    <div class="content">
+      <img class="headshot" src="images/Will.jpg"/>
+      <div class="name">
+        Will Wnekowicz
+        <a href="https://twitter.com/willwnekowicz/status/1129095581501014016?s=20" target="_blank">
+          <img src="images/iconTwitter.svg"/>
+        </a>
+      </div>
+      <div class="title">Principal Engineer at Kleiner Perkins</div>
+      <p>
+        Congrats Audius!
+        <br/>
+        Hedgehog 🦔 is the DApp on-boarding
+        <br/>
+        experience we’ve all been waiting for
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="usage">
+      <div class="row">
+        <div class="ten columns offset-by-one">
+          <h4>Usage</h4>
+          <h2>Is Hedgehog Right For Your DApp?</h2>
+          <p>Hedgehog isn’t right for every DApp. Massive improvements in user experience are only possible through tradeoffs. As a general rule Hedgehog should not be used for apps involving significant sums of money.  As a bridge, one could start users on Hedgehog and suggest migrating to a more secure wallet if their stored value increases beyond a certain threshold. Hedgehog is interoperable with existing web3 providers too.</p>
+        </div>
+      </div>
+      <div class="row good">
+        <div class="ten columns offset-by-one">
+          <h4>Trivial Or No Money</h4>
+          <h2>Examples Where Hedgehog Might Be Right For You <i class="emoji large white-heavy-check-mark"></i></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="four columns section">
+          <img src="images/iconSigningData@2x.png"/>
+          <h1>Securely Signing Data</h1>
+          <p>If you’re building decentralized applications that rely on user signed data (for instance via EIP-712-esque signing schemes).  Hedgehog could help simplify the experience if the stakes are low enough.</p>
+        </div>
+        <div class="four columns section">
+          <img src="images/iconGamepad@2x.png"/>
+          <h1>Decentralized Gaming App</h1>
+          <p>
+            If you’re building a fun gaming DApp, improving user experience is key to your platform’s growth. <i class="emoji key"></i>
+            <br/>
+            <br/>
+            Nothing ruins a good time quite like signing transactions.
+          </p>
+        </div>
+        <div class="four columns section">
+          <img src="images/iconHeadphones@2x.png"/>
+          <h1>Decentralized Music Player</h1>
+          <p>
+            If you’re building consumer-facing DApps, Hedgehog will dramatically improve user experience and significantly increase your potential userbase.
+            <br/>
+            <a href="" target="_blank">(A good example of this in action<i class="emoji winking-face"></i>)</a>
+          </p>
+        </div>
+      </div>
+      <div class="row bad">
+        <div class="ten columns offset-by-one">
+          <h4>Significant Money</h4>
+          <h2>Where You Should Not Use Hedgehog <i class="emoji large no-entry-sign"></i></h2>
+          <img src="images/iconBank@2x.png"/>
+          <p>
+            We absolutely do not recommend using Hedgehog in situations like these:
+            <br/>
+            <b>Decentralized Lending,  Banking DApp (Store-of-Value),  Prediction Markets</b>
+            <br/>
+            <br/>
+            If your DApp involves moving around significant sums of money, then the tradeoff in security is most likely not worth it. Hedgehog’s primary improvement to end-user experience is by hiding the wallet and not forcing users to confirm transactions - The opposite of what you’d want when moving money around.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="demo">
+      <div class="row">
+        <div class="ten columns offset-by-one">
+          <h4>Demo</h4>
+          <h2>So, How Does It Work?</h2>
+          <p>
+            Hedgehog is a package that lives in your front end application to create and manage a user’s entropy (from which a private key is derived). Hedgehog relies on a username and password to create auth artifacts, so it’s able to simulate a familiar authentication system that allows users to sign up or login from multiple browsers or devices and retrieve their entropy. Those artifacts, through hedgehog, are persisted to a backend of your choosing.
+            <br/>
+            <br/>
+            <b>A private key is only computed and available client side and is never transmitted or stored anywhere besides the user’s browser.</b>
+          </p>
+        </div>
+        <div class="twelve columns codesandbox">
+          <iframe
+            src="https://pp9zzv2n00.codesandbox.io/"
+            frameborder="0" scrolling="no"
+          >
+          </iframe>
+          <a href="https://codesandbox.io/s/pp9zzv2n00?fontsize=14" target="_blank" class="button codesandbox">Open in CodeSandbox <img src="images/iconCodeSandbox.svg"/></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="background"></div>
+    <div class="container">
+      <div class="row">
+        <div class="eight columns offset-by-two">
+          <img class="hedgehog-logo" src="images/hedgehogLogoHorizontalWhite.svg"/>
+          <h1>Build DApps For The Other 99%</h1>
+          <a href="https://github.com/AudiusProject/audius-hedgehog" target="_blank" class='button'>View on GitHub <img src="images/iconGithubPurple.svg"/></a>
+        </div>
+      </div>
+      <div class="mobile-hide row bottom">
+        <div class="four columns">
+          <img class="audius-logo" src="images/audiusLogoHorizontal.svg"/>
+        </div>
+        <div class="four columns">
+          <p>
+            &copy; 2019 Audius, Inc. All Rights Reserved.
+            <br/>
+            Made with ☕️ in SF & LA
+          </p>
+        </div>
+        <div class="four columns">
+          <div class="social">
+            <a href="https://www.facebook.com/AudiusProject" target="_blank"><img src="images/iconFacebook.svg"/></a>
+            <a href="https://twitter.com/AudiusProject" target="_blank"><img src="images/iconTwitter.svg"/></a>
+            <a href="https://instagram.com/audius.project" target="_blank"><img src="images/iconInstagram.svg"/></a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-show row bottom">
+        <img class="audius-logo" src="images/audiusLogoHorizontal.svg"/>
+        <div class="social">
+          <a href="https://www.facebook.com/AudiusProject" target="_blank"><img src="images/iconFacebook.svg"/></a>
+          <a href="https://twitter.com/AudiusProject" target="_blank"><img src="images/iconTwitter.svg"/></a>
+          <a href="https://instagram.com/audius.project" target="_blank"><img src="images/iconInstagram.svg"/></a>
+        </div>
+      </div>
+      <div class="mobile-show row bottom">
+        <p>
+          &copy; 2019 Audius, Inc. All Rights Reserved.
+          <br/>
+          Made with ☕️ in SF & LA
+        </p>
+      </div>
+
       </div>
     </div>
   </div>
 
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="js/header.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/scroll.js"></script>
+
 </body>
 </html>
