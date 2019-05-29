@@ -399,7 +399,7 @@ a:hover {
 .heroVideo .videoContainer video {
   position: relative;
   height: 100%;
-  left: 45%;
+  left: 47%;
   object-fit: cover;
 }
 
@@ -707,12 +707,12 @@ a:hover {
 
 .codesandbox iframe {
   width: 100%;
-  min-height: 440px;
+  min-height: 500px;
 }
 
 @media only screen and (max-width: 1385px) {
   .codesandbox iframe {
-    min-height: 800px;
+    min-height: 900px;
   }
 }
 
