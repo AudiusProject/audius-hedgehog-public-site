@@ -883,6 +883,7 @@ a:hover {
 .footer .container .audius-logo {
   position: relative;
   z-index: 100;
+  border: none !important;
 }
 
 .footer .social {
