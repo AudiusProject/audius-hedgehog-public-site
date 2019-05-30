@@ -465,6 +465,7 @@ a:hover {
     max-width: 100%;
     background: none;
     padding: 0;
+    margin-left: 0px;
   }
 }
 
