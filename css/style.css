@@ -544,6 +544,30 @@ a:hover {
   text-align: center;
 }
 
+.testimonial .content .pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.testimonial .content .pill .text {
+  height: 18px;
+  border-radius: 8px;
+  background-color: #AC70FF;
+  margin: 0;
+  padding: 2px 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
 .testimonial .content img.headshot {
   box-sizing: border-box;
   height: 100px;
@@ -553,6 +577,7 @@ a:hover {
   box-shadow: 0 1px 20px 0 rgba(107,60,177,0.5);
   margin-bottom: 10px;
 }
+
 
 .testimonial .content .name {
   color: #FFFFFF;
